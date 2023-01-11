@@ -1,0 +1,135 @@
+img{
+    width: 100%;
+    height: 100%;
+}
+.main-img{
+    width: 95%;
+    height: 95%;
+    margin-left: 8px;
+}
+.img-caption{
+    text-align: center;
+    line-height: 1;
+}
+#container{
+    width: 800px;
+    margin: 0 auto;
+}
+#header{
+    width: 100%;
+    height: 100px;
+}
+    #head-layer1{
+        width: 17%;
+        height: 100%;
+        float: left;
+    }
+    #head-layer2{
+        width: 55%;
+        height: 100%;
+        float: left;
+    }
+#nav{
+    height: 40px;
+}
+    ul{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    ul li{
+        list-style-type: none;
+        float: left;
+        width: 25%;
+        text-align: center;
+        line-height: 35px;
+        background-color: #65AC1A;
+    }
+    a{
+        text-decoration: none;
+        font-family: "고딕체";
+    }
+    li a:link{
+        color: white;
+    }
+    li a:visited{
+        color: white;
+    }
+#main{
+    height: 500px;
+}
+    #main-layer1{
+        width: 19%;
+        height: 100%;
+        background-image: url(./img/img/left_img.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        float: left;
+    }
+    #main-layer2{
+        width: 60%;
+        height: 100%;
+        background-repeat: repeat;
+        float: left;
+    }
+        #img-top{
+            width: 100%;
+            height: 50%;
+        }
+            #top-left{
+                height: 100%;
+                width: 50%;
+                float: left;
+            }
+            #top-right{
+                height: 100%;
+                width: 50%;
+                float: left;
+            }
+        #img-bottom{
+            height: 50%;
+        }    
+            #bottom-left{
+                height: 100%;
+                width: 50%;
+                float: left;
+            }
+            #bottom-right{
+                width: 50%;
+                height: 100%;
+                float: left;
+            }
+    #main-layer3{
+        width: 21%;
+        height: 100%;
+        float: left;
+    }
+        #aside-top{
+            width: 100%;
+            height: 20%;
+        }
+            button{
+                padding: 8px 7px;
+            }
+            #text-area{
+                text-align: center;
+            }
+        #aside-mid{
+            height: 40%;
+            margin-top: 10px;
+            background-image: url(./img/img/right_img.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        #aside-bottom{
+            height: 30%;
+            margin-top: 20px;
+            background-image: url(./img/img/me_chat.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+#footer{
+    height: 80px;
+        
+}    
+

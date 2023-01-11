@@ -1,0 +1,35 @@
+div{
+    --border: 1px solid black;
+    /*보더주고싶은데 깨질때 사용*/
+    --box-sizing: border-box;
+}
+
+#container{
+    width: 800px;
+    --margin: 0 auto;
+}
+#header{
+    width: 100%;
+    height: 150px;
+    background-color: lightskyblue;
+}
+#main{
+    height: 500px;
+    background-color: lightgrey;
+}
+    #main-layer1{
+        width: 20%;
+        height: inherit;
+        background-color: lightcoral;
+        float: left;
+    }
+    #main-layer2{
+        width: 80%;
+        height: inherit;
+        background-color: aquamarine;
+        float: left; /*div로 공간 떨어진거 붙여줌*/
+    }
+#footer{
+    height: 100px;
+    background-color: lightseagreen;
+}

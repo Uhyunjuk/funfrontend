@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display : flex part4</title>
+</head>
+<style>
+    .container{
+        width: 100%;
+        height: 150px;
+        /* display는 container에 적는것 */
+        display: flex;
+        background-color: rgb(191, 188, 197);
+        border: 1px solid black;
+        margin-bottom: 20px;
+        --flex-direction: row;
+        --justify-content: flex-start;
+        align-items: center;
+    }
+    .box{
+        background-color: rgb(74, 25, 115);
+        margin: 5px;
+        padding: 5px 45px;
+    }
+    p{
+        color: rgba(243, 237, 246, 0.92);
+        text-align: center;
+    }
+    #box1{
+        align-self: flex-start;
+    }
+    #box3{
+        align-self: stretch;
+    }
+</style>
+<body>
+    <!--div.container>div.box*3>p{$}-->
+    <div class="container" id="opt1">
+        <div class="box" id="box1">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box" id="box3">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+
+</head>
+</html>
