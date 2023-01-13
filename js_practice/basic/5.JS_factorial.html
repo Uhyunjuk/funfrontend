@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팩토리얼 계산하기</title>
+    <style>
+        div,h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>while문을 사용한 팩토리얼 계산</h1>
+    <div id="print">1</div>
+
+    <script>
+        // 5! = 5x4x3x2x1
+        var num = prompt("숫자를 입력하세요", 10);
+        var i = 1;
+        var result = 1;
+        var divTag = document.querySelector("#print");
+        var msgModel = "";  // 메세지 담을 변수 -> 모델
+        // 취소버튼누르면 null이 나오니까 null값 체크를 잘 해야야한다
+        if(num != null){
+            while(i <= num){
+                // result = result * i;
+                result *= i;
+                i++;
+            }
+            msgModel = num + "! = " + result;
+        }else {
+            msgModel = "값을 입력하지 않았습니다.";
+        }
+        divTag.innerHTML = msgModel;
+
+
+    </script>
+</body>
+</html>
