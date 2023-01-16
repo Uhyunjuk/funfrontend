@@ -44,6 +44,37 @@
             
         </table>
         </p>
+        <script>
+            var addUser = function(){
+                var name = document.querySelector("#name").value;
+                var age = document.querySelector("#age").value;
+                //gender는 라디오버튼 둘중하나의 값을 가져와야함
+                var gender = document.querySelectorAll("[name=gender]");
+                if(gender[0].checked){
+                    gender = "남";
+                }else if(gender[1].checked){
+                    gender = "여";
+                }
+                // var male = document.querySelector("#male");
+                // var female = document.querySelector("#female");
+                // if(male.checked){
+                //     console.log("체크됨");
+                // }
+                // if(female.checked){
+                //     console.log("체크");
+                // }
+                var phone = document.querySelector("#phone").value;
+                var hobby = document.querySelectorAll("[name=hobby]");
+                var hobbyVal = "";
+                for(var i=0; i<hobby.length; i++){
+                    if(hobby[i].checked){
+                        hobbyVal += hobby[i].value; + " ";
+                    }
+                }
+                var tableTag = document.querySelector("#tbl");
+                tableTag.innerHTML += "<tr><td>" + name + "</td><td>" + age + "</td><td>" + gender + "</td><td>" + phone + "</td><td>" + hobbyVal +"</td></tr>";
+            }
+        </script>
         
 </body>
 </html>
