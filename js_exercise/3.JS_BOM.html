@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>브라우저 객체 모델</title>
+    <style>
+
+    </style>
 </head>
 <body>
     <h1>Window 객체</h1>
@@ -12,17 +15,107 @@
     <h3>Window 객체</h3>
     <p>브라우저 창에 대한 설정을 하는 객체</p>
     <button onclick="callConfirm();">confirm 확인</button> <br><br>
-    <button onclick="callPrompt();">prompt 확인</button>
+    <button onclick="callPrompt();">prompt 확인</button> <br><br>
+
+    <button onclick="callOpen();">open 확인</button>
+    <button onclick="callClose();">close 확인</button><br><br>
+
+    <button id="callTimeOut">setTimeOut 확인</button><br><br>
+
+    <button id="callInterval">setInterval 확인</button>
+    <button id="callIntervalClear">clearInterval 확인 </button> <br><br>
+
+    <button onclick="startClock();">디지털 시계 on</button>
+    <button onclick="stopClock();">디지털 시계 off</button>
+    <div id ="clockArea" style ="background-color: #ccc; border: 1px solid black; width:300px; height:100px; font-size: 30px; color:black;"></div>
+
+    <br><br><br>
+    <hr>
+    <h3>screen 객체</h3>
+    <p>웹 브라우저 화면이 아닌 운영체제 화면의 속성을 가진 객체</p>
+    <button onclick="checkScreen();">스크린 객체 확인</button>
+    <hr>
+
+    <h3>navigator 객체</h3>
+    <p>웹 페이지를 실행하고 있는 브라우저에 대한 정보를 가지고 있는 객체</p>
+    <button onclick="checkNavigator();">네비게이터 객체 확인</button>
+    <hr>
+
+    <h3>location 객체</h3>
+    <p>브라우저 주소 표시줄과 관련된 객체(페이지 이동)</p>
+    <button onclick="javascript:location.reload();">location 확인</button><br><br>
+    <button onclick="checkHref();">href 페이지 이동</button>
+    <button onclick="checkAssign();">assign 페이지 이동</button>
+    <button onclick="checkReplace();">replace 페이지 이동</button>
+    <br><br>
     <script>
+        function checkScreen(){
+            console.log(screen);
+        }
+        function checkNavigator(){
+            console.log(navigator);
+            // user-agent
+        }
+        function checkHref(){
+            //페이지이동
+            location.href = "http://www.iei.or.kr";
+        }
+        function checkAssign(){
+            //뒤로가기 가능한 페이지 이동
+            location.assign("http://www.iei.or.kr");
+        }
+        function checkReplace(){
+            //뒤로가기 불가능한 페이지 이동
+            location.replace("http://www.google.co.kr");
+        }
+        
+        // -----------------------------------   
+
         function callConfirm() {
             var result = window.confirm("확인을 누르면 true, 취소를 누르면 false가 반환");
             console.log(result);
-
+            
         }
         function callPrompt() {
             var usermsg = window.prompt("아무말이나 적어보세요 ! ");
             console.log(usermsg);
         }
-    </script>
+        
+        var myWindow = null;
+        function callOpen(){
+            myWindow = window.open("2.JS_DOM.html","pop","width=500, height=400");
+        }
+        function callClose(){
+            myWindow.close();
+        }
+        document.querySelector("#callTimeOut").addEventListener("click", function(){
+            window.setTimeout(function(){
+                myWindow.close();}, 3000); // 3초후 닫기
+                // 1ms가 기본이며 1ms는 1/1000초
+                // 1/1000 * 3000 = 3초
+            })
+            
+        var eInterVal;
+        document.querySelector("#callInterval").addEventListener("click",function(){
+            window.setInterval(function(){
+                console.log("실행되었음");
+            }, 1000);
+        })
+            
+        document.querySelector("#callIntervalClear").onclick = function() {    
+            clearInterval(eInterVal);
+        }
+            
+        var clockObj;
+        function startClock(){
+            var areaTag = document.querySelector("#clockArea");
+            clockObj = setInterval(function(){
+                var timeData = new Date();
+                areaTag.innerHTML = timeData.getHours() + " : " + timeData.getMinutes() + " : " + timeData.getSeconds();},1000);            
+            }
+        function stopClock(){
+            clearInterval(clockObj);
+            }
+</script>
 </body>
 </html>
