@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 스타일</title>
+    <style>
+        .div-class{
+            width: 100px;
+            height: 100px;
+            background-color: salmon;
+            animation-name: transAni;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes transAni {
+            0%{
+                background-color: yellowgreen;
+            }
+            100%{
+                background-color: orange;
+                border-radius: 50%;
+                transform: rotateZ(360deg);
+            }
+        }
+        .div2-class{
+            width: 100px;
+            height: 100px;
+            margin: 100px;
+            background-color: gold;
+            animation-name: transRainbow;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes transRainbow {
+            0%{
+                background-color: red;
+            }
+            15%{
+                background-color: orange;
+                border-radius: 20%;
+
+            }
+            30%{
+                background-color: yellow;
+                border-radius: 80%;
+            }
+            45%{
+                background-color: green;
+                border-radius: 30%;
+            }
+            60%{
+                background-color: blue;
+                border-radius: 70%;
+            }
+            75%{
+                background-color: navy;
+                border-radius: 40%;
+            }
+            100%{
+                background-color: indigo;
+                border-radius: 60%;
+            }
+        }
+        img{
+            width: 300px;
+            margin: 100px;
+        }
+        img:hover{
+            animation-name: bingbing;
+            animation-duration: 7s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes bingbing {
+            0%{
+                border: 5px dotted black;
+            } 
+            100%{
+                border-radius: 40%;
+                border: 4px solid yellow;
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>애니메이션</h1>
+    <div class="div-class"></div><br>
+    <div class="div2-class"></div>
+    <br><br><br>
+    <img src="./img/forest1.PNG" alt="숲">
+    <br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>
